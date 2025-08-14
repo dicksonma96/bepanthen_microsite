@@ -28,7 +28,9 @@ body {
 .bepanthen {
   * {
     font-family: "Lexend", sans-serif;
+    text-decoration: none;
   }
+
   .row {
     display: flex;
     align-items: center;
@@ -38,12 +40,18 @@ body {
     flex-direction: column;
     align-items: center;
   }
+  .cta_btn {
+    background-color: #234d96;
+    color: white;
+    padding: 10px 15px;
+    font-weight: normal;
+  }
 
   .content {
     width: 100%;
-    max-width: 1170px;
+    max-width: 1210px;
     margin: 0 auto;
-    padding: 20px 0;
+    padding: 20px;
 
     h2 {
       color: #234d96;
@@ -68,6 +76,7 @@ body {
     }
 
     .voucher {
+      margin-bottom: 30px;
       img {
         width: 100%;
       }
@@ -80,10 +89,33 @@ body {
     }
 
     .info_banner {
-      box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
       margin-bottom: 30px;
-      img {
-        width: 100%;
+      gap: 30px;
+      width: 100%;
+      flex-wrap: wrap;
+      .story {
+        min-width: 300px;
+        flex: 1;
+        border: solid 1px rgb(240, 240, 240);
+        background-color: white;
+        img {
+          width: 100%;
+        }
+
+        .col {
+          padding: 20px;
+          align-items: stretch;
+
+          h3 {
+            color: #234d96;
+            font-size: 36px;
+            text-align: center;
+          }
+          .cta_btn {
+            align-self: flex-end;
+            margin-top: 20px;
+          }
+        }
       }
     }
   }
@@ -102,13 +134,9 @@ body {
 
     .cta_btn {
       background-color: #ec1c24;
-      color: white;
-      padding: 10px 15px;
-      font-weight: normal;
     }
 
     .product_info {
-      gap: 30px;
       flex: 1;
       align-items: stretch;
       .product_img {
@@ -116,23 +144,76 @@ body {
       }
 
       .info {
+        padding: 20px;
+        background-color: #f6f6f6;
+        border: solid 1px #f0f0f0;
+
         align-items: start;
         flex: 1;
+        position: relative;
         h3 {
           color: #8f5a24;
           font-size: 20px;
           margin: 0;
           margin-bottom: 10px;
+          padding-right: 200px;
         }
 
         .reviews {
           color: #8f5a24;
           width: 100%;
+          margin-bottom: 20px;
           .stars {
             margin: 0 10px;
           }
         }
 
+        .mmcbt_review {
+          align-items: stretch;
+          border: solid 1px #f0f0f0;
+          background-color: white;
+          padding: 15px 20px;
+          flex: 1;
+
+          .user_row {
+            padding: 10px 0;
+            border-bottom: solid 1px #f0f0f0;
+            margin-bottom: 15px;
+            gap: 5px;
+
+            .avatar {
+              width: 25px;
+              height: 25px;
+              background-color: #00b4b8;
+              border-radius: 999px;
+              color: white;
+              justify-content: center;
+            }
+            .stars {
+              margin-left: auto;
+            }
+          }
+
+          strong {
+            color: black;
+            font-size: 20px;
+          }
+          p {
+            color: #818181;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+
+          .read_more {
+            color: #56a5de;
+            font-size: 14px;
+            text-decoration: underline;
+          }
+        }
+        /* 
         .attr_list {
           align-items: stretch;
           margin: 15px 0;
@@ -146,24 +227,12 @@ body {
               margin-left: auto;
             }
           }
-        }
+        } */
 
-        .join {
-          background-color: #fec40d;
-          margin-top: auto;
-          width: 100%;
-          padding: 0 20px;
-          height: 80px;
-          color: #6b0000;
-          font-weight: bold;
-
-          img {
-            margin-right: 20px;
-          }
-
-          .cta_btn {
-            margin-left: auto;
-          }
+        .cta_btn {
+          position: absolute;
+          right: 20px;
+          top: 20px;
         }
       }
     }
@@ -207,52 +276,6 @@ body {
         top: 0;
       }
 
-      .owl-carousel {
-        width: 100%;
-        .mmcbt_review {
-          align-items: stretch;
-          border: solid 1px #f0f0f0;
-          padding: 15px 20px;
-
-          .user_row {
-            padding: 10px 0;
-            border-bottom: solid 1px #f0f0f0;
-            margin-bottom: 15px;
-            gap: 5px;
-
-            .avatar {
-              width: 25px;
-              height: 25px;
-              background-color: #00b4b8;
-              border-radius: 999px;
-              color: white;
-              justify-content: center;
-            }
-            .stars {
-              margin-left: auto;
-            }
-          }
-
-          strong {
-            color: black;
-            font-size: 20px;
-          }
-          p {
-            color: #818181;
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-            -webkit-line-clamp: 3;
-            overflow: hidden;
-            text-overflow: ellipsis;
-          }
-
-          .read_more {
-            color: #56a5de;
-            font-size: 14px;
-            text-decoration: underline;
-          }
-        }
-      }
       .all_review {
         background: url("./assets/mmcbt_bg.jpg");
         background-size: cover;
@@ -274,48 +297,12 @@ body {
     .content {
       width: 90%;
     }
+
     .mmcbt {
       .product_info {
         .product_img {
           width: 200px;
-        }
-
-        .info {
-          align-items: start;
-          flex: 1;
-          h3 {
-            color: #8f5a24;
-            font-size: 20px;
-            margin: 0;
-            margin-bottom: 10px;
-          }
-
-          .reviews {
-            color: #8f5a24;
-            width: 100%;
-            .stars {
-              margin: 0 10px;
-            }
-          }
-
-          .attr_list {
-            align-items: stretch;
-            margin: 15px 0;
-            width: 100%;
-            gap: 5px;
-
-            .attr {
-              color: #b48c65;
-              font-size: 16px;
-              .stars {
-                margin-left: auto;
-              }
-            }
-          }
-
-          .join {
-            display: none;
-          }
+          object-fit: cover;
         }
       }
     }
@@ -329,6 +316,18 @@ body {
         flex-direction: column;
         .product_img {
           width: 100%;
+        }
+
+        .info {
+          h3 {
+            padding: 0;
+          }
+          .cta_btn {
+            margin-top: 15px;
+            position: static;
+            width: 100%;
+            text-align: center;
+          }
         }
       }
     }
