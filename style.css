@@ -47,6 +47,11 @@ body {
     font-weight: normal;
   }
 
+  .skeleton {
+    background: grey;
+    animation: skeleton 1s infinite;
+  }
+
   .content {
     width: 100%;
     max-width: 1210px;
@@ -174,6 +179,7 @@ body {
           background-color: white;
           padding: 15px 20px;
           flex: 1;
+          width: 100%;
 
           .user_row {
             padding: 10px 0;
@@ -202,7 +208,7 @@ body {
             color: #818181;
             display: -webkit-box;
             -webkit-box-orient: vertical;
-            -webkit-line-clamp: 3;
+            -webkit-line-clamp: 2;
             overflow: hidden;
             text-overflow: ellipsis;
           }
@@ -290,6 +296,85 @@ body {
       }
     }
   }
+
+  .mmcbt_list {
+    width: 100%;
+  }
+
+  .mmcbt_skeleton {
+    min-height: 200px;
+    width: 100%;
+  }
+
+  .ig_skeleton {
+    width: 100%;
+    gap: 20px;
+    .skeleton {
+      flex: 1;
+      aspect-ratio: 5 / 6;
+    }
+  }
+
+  .ig_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    width: 100%;
+    gap: 10px;
+    .ig_post {
+      border: solid 1px #cacaca;
+      padding: 5px;
+      align-items: stretch;
+      font-size: 14px;
+      position: relative;
+
+      .ig_btn {
+        position: absolute;
+        right: 12px;
+        top: 12px;
+        align-self: flex-end;
+        z-index: 2;
+        img {
+          width: 20px;
+        }
+      }
+
+      .hashtag {
+        font-size: 12px;
+        color: grey;
+        flex: 1;
+        margin-bottom: 10px;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .media {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        margin-bottom: 10px;
+        object-fit: cover;
+        pointer-events: none;
+      }
+
+      span {
+        color: grey;
+      }
+    }
+  }
+}
+
+@keyframes skeleton {
+  0% {
+    background-color: rgb(240, 240, 240);
+  }
+  50% {
+    background-color: rgb(225, 225, 225);
+  }
+  100% {
+    background-color: rgb(240, 240, 240);
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -305,6 +390,17 @@ body {
           object-fit: cover;
         }
       }
+    }
+    .ig_skeleton {
+      .skeleton:first-child {
+        display: none;
+      }
+    }
+
+    .ig_grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 5px;
     }
   }
 }
